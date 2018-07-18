@@ -1,0 +1,58 @@
+1,575 hits between january 2015 and june 2018
+- of those, spotify had data for 1552
+- cases like JayZ / Beyonce
+- billboard / spotify have different track/artist names
+
+
+
+got 1962 random spotify tracks
+- 462 were already hits, leaving 1500 non-hits
+
+
+
+got 403 new releases on spotify
+- 11 already on the charts, leaving 392
+
+
+
+found duplicate entries in all of the datasets, and got rid of them. left:
+- 1378 billboard hits
+- 1457 random songs
+- 191 new releases
+
+
+
+some songs don't have twitter data
+- 11.5% of new releases
+- 7.5% of random historical songs
+- imputation for those - random 300d vectors lying on hypersphere... of comparable length to my real vectors... basically a "random vector" of equal magnitude
+
+
+
+logistic regression 1
+- accuracy = 0.725, precision = 0.726, recall = 0.725, f1 = 0.725
+
+extra trees 1
+- accuracy = 0.732, precision = 0.732, recall = 0.732, f1 = 0.732
+
+random forest 1
+- accuracy = 0.760, precision = 0.761, recall = 0.760, f1 = 0.760
+
+gradient boosted 1
+- accuracy = 0.785, precision = 0.803, recall = 0.785, f1 = 0.782
+
+
+
+optimized gb
+({'learning_rate': 0.05,
+  'loss': 'deviance',
+  'max_depth': 10,
+  'max_features': 'auto',
+  'min_samples_split': 25,
+  'n_estimators': 75,
+  'subsample': 0.8},
+ 0.7945608311423082)
+
+
+
+
